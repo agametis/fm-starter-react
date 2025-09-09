@@ -39,8 +39,3 @@ export const datenVonFMHolen = async () => {
 window.initialisiereWebViewer = initialisiereWebViewer;
 window.datenAnFMSenden = datenAnFMSenden;
 window.datenVonFMHolen = datenVonFMHolen;
-
-// window.addEventListener("DOMContentLoaded", () => {
-//   console.log("DOMContentLoaded");
-//   initWebViewer();
-// });
