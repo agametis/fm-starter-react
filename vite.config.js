@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import ViteMinifyPlugin from "vite-plugin-minify";
-import viteSingleFile from "vite-plugin-singlefile";
+import { ViteMinifyPlugin } from "vite-plugin-minify";
+import { viteSingleFile } from "vite-plugin-singlefile";
 
 // https://vite.dev/config/
 export default defineConfig({
