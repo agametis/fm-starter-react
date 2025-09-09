@@ -1,24 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
+import "./App.css";
+import { initWebViewer, datenAnFMSenden, datenVonFMHolen } from "./functions";
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    initWebViewer();
+  }, []);
 
   return (
     <>
-    <h1>Hallo Welt!</h1>
+      <h1>Hallo Welt!</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <input placeholder="..." title="Daten" type="text" id="inputData" />
+        <button onClick={() => datenAnFMSenden()}>Daten an FM senden</button>
+        <button onClick={() => datenVonFMHolen()}>Daten von FM holen</button>
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

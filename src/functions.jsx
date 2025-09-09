@@ -1,13 +1,13 @@
 import FMGofer, {Option} from "fm-gofer";
 
-const initWebViewer = () => {
+export const initWebViewer = () => {
   const scriptName = "ext_daten_von_fm";
   const param = {};
 
   FMGofer.PerformScriptWithOption(scriptName, param, Option.SuspendAndResume);
 };
 
-const datenAnFMSenden = () => {
+export const datenAnFMSenden = () => {
   const inputElement = document.getElementById("inputData");
   const inputValue = inputElement ? inputElement.value : "";
 
@@ -17,7 +17,7 @@ const datenAnFMSenden = () => {
   FMGofer.PerformScriptWithOption(scriptName, param, Option.SuspendAndResume);
 };
 
-const initialisiereWebViewer = (parameter) => {
+export const initialisiereWebViewer = (parameter) => {
   const p = JSON.parse(parameter);
 
   let titel = p.titel ? p.titel : "Keine Daten von FM geladen!";
@@ -29,7 +29,7 @@ const initialisiereWebViewer = (parameter) => {
   }
 };
 
-const datenVonFMHolen = async () => {
+export const datenVonFMHolen = async () => {
   const scriptName = "ext_daten_von_fm";
   const param = {};
 
@@ -40,7 +40,7 @@ window.initialisiereWebViewer = initialisiereWebViewer;
 window.datenAnFMSenden = datenAnFMSenden;
 window.datenVonFMHolen = datenVonFMHolen;
 
-window.addEventListener("DOMContentLoaded", () => {
-  console.log("DOMContentLoaded");
-  initWebViewer();
-});
+// window.addEventListener("DOMContentLoaded", () => {
+//   console.log("DOMContentLoaded");
+//   initWebViewer();
+// });
